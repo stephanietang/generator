@@ -58,6 +58,26 @@ CREATE TABLE verify_token(
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE basic_info(
+	user_id INT NOT NULL,
+	name	VARCHAR(250),
+	country_id INT,
+	city VARCHAR(100),
+	tel_no	VARCHAR(20),
+	experience_id INT,
+	degree_id INT,
+	sex_id 	INT,
+	born_year INT,
+	
+	PRIMARY KEY(user_id),
+	
+	FOREIGN KEY (user_id)
+		REFERENCES user(id)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+
 CREATE TABLE role(
 	id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(40),
