@@ -31,10 +31,27 @@
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
+<!-- 
     <table schema="gene" tableName="user" domainObjectName="User" >
       	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 		<columnOverride column="enabled" javaType="java.lang.Integer" />
-    </table> 
+    </table>
+     -->
+    <table schema="gene" tableName="country" domainObjectName="Country" >
+      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+    </table>
+    <table schema="gene" tableName="experience" domainObjectName="Experience" >
+      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+    </table>
+    <table schema="gene" tableName="sex" domainObjectName="Sex" >
+      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+    </table>
+    <table schema="gene" tableName="degree" domainObjectName="Degree" >
+      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+    </table>
+    <table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
+      	<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+    </table>
     <!-- 
     <table schema="gene" tableName="verify_token" domainObjectName="VerifyToken" >
       	<generatedKey column="ID" sqlStatement="MySql" identity="true" />

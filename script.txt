@@ -1,0 +1,21 @@
+##### to see the maven plugin goals:
+
+> mvn help:describe -Dplugin=groupid:artifactid
+
+##### to know the mybatis-generator goal, run:
+
+> mvn help:describe -Dplugin=org.mybatis.generator:mybatis-generator-maven-plugin
+
+This plugin has 1 goal:
+
+mybatis-generator:generate
+  Description: Goal which generates MyBatis/iBATIS artifacts.
+
+> mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
+
+##### kill tomcat process:
+pkill -9 -f tomcat
+
+
+
+

@@ -16,7 +16,8 @@ INSERT INTO country VALUES (2, '美国', 'USA');
 
 CREATE TABLE experience(
 	id INT NOT NULL AUTO_INCREMENT,
-	desc VARCHAR,
+	exp_desc VARCHAR(50),
+	
 	PRIMARY KEY(id)
 );
 
@@ -27,7 +28,7 @@ INSERT INTO experience VALUES (4, '五年以上');
 
 CREATE TABLE degree(
 	id INT NOT NULL AUTO_INCREMENT,
-	desc VARCHAR,
+	degree_desc VARCHAR(10),
 	PRIMARY KEY(id)
 );
 
@@ -38,7 +39,7 @@ INSERT INTO degree VALUES (4, '大专');
 
 CREATE TABLE sex(
 	id INT NOT NULL AUTO_INCREMENT,
-	desc VARCHAR,
+	sex_desc VARCHAR(1),
 	PRIMARY KEY(id)
 );
 
