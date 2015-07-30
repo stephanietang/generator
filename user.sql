@@ -1,12 +1,12 @@
-# DROP TABLE IF EXISTS post;
-# DROP TABLE IF EXISTS company;
+-- DROP TABLE IF EXISTS post;
+-- DROP TABLE IF EXISTS company;
 
 DROP TABLE IF EXISTS verify_token;
-# DROP TABLE IF EXISTS user_role;
-# DROP TABLE IF EXISTS role_permission;
+-- DROP TABLE IF EXISTS user_role;
+-- DROP TABLE IF EXISTS role_permission;
 DROP TABLE IF EXISTS user;
-# DROP TABLE IF EXISTS role;
-# DROP TABLE IF EXISTS permission;
+-- DROP TABLE IF EXISTS role;
+-- DROP TABLE IF EXISTS permission;
 
 
 CREATE TABLE user(
@@ -41,7 +41,7 @@ CREATE TABLE basic_info(
 	exp_id INT,
 	degree_id INT,
 	sex_id INT,
-	born_year INT,
+	born_year INT(4),
 	
 	PRIMARY KEY(user_id),
 	
@@ -50,6 +50,21 @@ CREATE TABLE basic_info(
 	FOREIGN KEY (exp_id) REFERENCES experience(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (degree_id) REFERENCES degree(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (sex_id) REFERENCES sex(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE education(
+	id INT,
+	user_id INT,
+	school_name VARCHAR(200),
+	degree_id INT,
+	start_year INT(4),
+	end_year INT(4),
+	department VARCHAR(200),
+	
+	PRIMARY KEY(id),
+	
+	FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (degree_id) REFERENCES degree(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -134,6 +149,8 @@ CREATE TABLE post(
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-insert into user values(1, 'test','test',null, null, 'test@test.com',1);
-insert into basic_info values (1, '陈大文', 1, '深圳', '16820428602', 1, 1, 1, 1980);
+
+insert into basic_info values (1, '陈大文', 1, '深圳', '16820428602', 1, 1, 1, 1985);
+insert into education values(1,1,'清华大学',1,2003,2007,'计算机科学与技术');
+insert into education values(2,1,'哥伦比亚大学',2,2007,2009,'计算机科学与技术');
 
