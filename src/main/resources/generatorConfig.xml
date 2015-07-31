@@ -36,7 +36,7 @@
       	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 		<columnOverride column="enabled" javaType="java.lang.Integer" />
     </table>
-     -->
+    
     <table schema="gene" tableName="country" domainObjectName="Country" >
       	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
     </table>
@@ -49,8 +49,13 @@
     <table schema="gene" tableName="degree" domainObjectName="Degree" >
       	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
     </table>
+       -->  
     <table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
       	<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+    </table>
+
+    <table schema="gene" tableName="education" domainObjectName="Education" >
+      	<generatedKey column="id" sqlStatement="MySql" identity="true" />
     </table>
     <!-- 
     <table schema="gene" tableName="verify_token" domainObjectName="VerifyToken" >
