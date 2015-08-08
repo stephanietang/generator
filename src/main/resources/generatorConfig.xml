@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-	<classPathEntry location="C:\Program Files\MySQL\Connector.J 5.1\mysql-connector-java-5.1.35-bin.jar" /> 
-	<!-- <classPathEntry location="/Users/Stephanie/API/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar" /> -->
+	<!-- <classPathEntry location="C:\Program Files\MySQL\Connector.J 5.1\mysql-connector-java-5.1.35-bin.jar" />  -->
+	<classPathEntry location="/Users/Stephanie/API/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar" />
 
 	<context id="mysqlTable" targetRuntime="MyBatis3">
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
@@ -43,19 +43,12 @@
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
 	    </table>
-	 <!--    
-	    <table schema="gene" tableName="country" domainObjectName="Country" >
-	      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+	     <!-- 
+	    <table schema="gene" tableName="system_param" domainObjectName="SystemParam" >
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+			<columnOverride column="enabled" javaType="java.lang.Integer" />
 	    </table>
-	    <table schema="gene" tableName="experience" domainObjectName="Experience" >
-	      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-	    </table>
-	    <table schema="gene" tableName="sex" domainObjectName="Sex" >
-	      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-	    </table>
-	    <table schema="gene" tableName="degree" domainObjectName="Degree" >
-	      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-	    </table>
+	    
 	    <table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
 	      	<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
 	    </table>
