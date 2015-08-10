@@ -4,85 +4,82 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-  <!-- <classPathEntry location="C:\Program Files\MySQL\Connector.J 5.1\mysql-connector-java-5.1.35-bin.jar" /> -->
-  <classPathEntry location="/Users/Stephanie/API/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar" /> 
+	<!-- <classPathEntry location="C:\Program Files\MySQL\Connector.J 5.1\mysql-connector-java-5.1.35-bin.jar" />  -->
+	<classPathEntry location="/Users/Stephanie/API/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar" />
 
-  <context id="mysqlTable" targetRuntime="MyBatis3">
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://localhost:3306/gene"
-        userId="devuser"
-        password="devpwd">
-    </jdbcConnection>
+	<context id="mysqlTable" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+	  	
+		<commentGenerator>    
+			<property name="suppressDate" value="true" />    
+			<property name="suppressAllComments" value="true" />  
+		</commentGenerator>
 
-    <javaTypeResolver >
-      <property name="forceBigDecimals" value="false" />
-    </javaTypeResolver>
+	    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+	        connectionURL="jdbc:mysql://localhost:3306/gene"
+	        userId="devuser"
+	        password="devpwd">
+	    </jdbcConnection>
+	
+	    <javaTypeResolver >
+	      	<property name="forceBigDecimals" value="false" />
+	    </javaTypeResolver>
+	
+	    <javaModelGenerator targetPackage="com.bolehunt.gene.domain" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+	    </javaModelGenerator>
+	
+	    <sqlMapGenerator targetPackage="com.bolehunt.gene.persistence"  targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+	    </sqlMapGenerator>
+	
+	    <javaClientGenerator type="XMLMAPPER" targetPackage="com.bolehunt.gene.persistence"  targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+	    </javaClientGenerator>
+	
+		<!--  Tables -->
+	    <table schema="gene" tableName="user" domainObjectName="User" >
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+			<columnOverride column="enabled" javaType="java.lang.Integer" />
+	    </table>
+	     <!-- 
+	    <table schema="gene" tableName="system_param" domainObjectName="SystemParam" >
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+			<columnOverride column="enabled" javaType="java.lang.Integer" />
+	    </table>
+	    
+	    <table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
+	      	<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+	    </table>
+	
+	    <table schema="gene" tableName="education" domainObjectName="Education" >
+	      	<generatedKey column="id" sqlStatement="MySql" identity="true" />
+	    </table>
+	    <table schema="gene" tableName="verify_token" domainObjectName="VerifyToken" >
+	      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+			<columnOverride column="verified" javaType="java.lang.Integer" />
+			<columnOverride column="token_type" javaType="java.lang.Integer" />
+	    </table>
+	    -->
+	    <!-- <table schema="gene" tableName="role" domainObjectName="Role" >
+	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+	    </table>
+	    <table schema="gene" tableName="user_role" domainObjectName="UserRole" >
+	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+	    </table>
+	    <table schema="gene" tableName="permission" domainObjectName="Permission" >
+	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+	    </table>
+	    <table schema="gene" tableName="role_permission" domainObjectName="RolePermission" >
+	      <generatedKey column="ID" sqlStatement="MySql" identity="true" /> 
+	    </table>-->
+	    <!-- <table schema="gene" tableName="company" domainObjectName="Company" >
+	      <generatedKey column="COMPANY_ID" sqlStatement="MySql" identity="true" />
+	    </table>
+	        <table schema="gene" tableName="post" domainObjectName="Post" >
+	      <generatedKey column="POST_ID" sqlStatement="MySql" identity="true" />
+	    </table> -->
 
-    <javaModelGenerator targetPackage="com.bolehunt.gene.domain" targetProject="src/main/java">
-      <property name="enableSubPackages" value="true" />
-      <property name="trimStrings" value="true" />
-    </javaModelGenerator>
-
-    <sqlMapGenerator targetPackage="com.bolehunt.gene.persistence"  targetProject="src/main/resources">
-      <property name="enableSubPackages" value="true" />
-    </sqlMapGenerator>
-
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.bolehunt.gene.persistence"  targetProject="src/main/java">
-      <property name="enableSubPackages" value="true" />
-    </javaClientGenerator>
-
-<!-- 
-    <table schema="gene" tableName="user" domainObjectName="User" >
-      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-		<columnOverride column="enabled" javaType="java.lang.Integer" />
-    </table>
-    
-    <table schema="gene" tableName="country" domainObjectName="Country" >
-      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-    </table>
-    <table schema="gene" tableName="experience" domainObjectName="Experience" >
-      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-    </table>
-    <table schema="gene" tableName="sex" domainObjectName="Sex" >
-      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-    </table>
-    <table schema="gene" tableName="degree" domainObjectName="Degree" >
-      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-    </table>
-       -->  
-    <table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
-      	<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
-    </table>
-
-    <table schema="gene" tableName="education" domainObjectName="Education" >
-      	<generatedKey column="id" sqlStatement="MySql" identity="true" />
-    </table>
-    <!-- 
-    <table schema="gene" tableName="verify_token" domainObjectName="VerifyToken" >
-      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
-		<columnOverride column="verified" javaType="java.lang.Integer" />
-		<columnOverride column="token_type" javaType="java.lang.Integer" />
-    </table>
-    -->
-    <!-- <table schema="gene" tableName="role" domainObjectName="Role" >
-      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
-    </table>
-    <table schema="gene" tableName="user_role" domainObjectName="UserRole" >
-      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
-    </table>
-    <table schema="gene" tableName="permission" domainObjectName="Permission" >
-      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
-    </table>
-    <table schema="gene" tableName="role_permission" domainObjectName="RolePermission" >
-      <generatedKey column="ID" sqlStatement="MySql" identity="true" /> 
-    </table>-->
-    <!-- <table schema="gene" tableName="company" domainObjectName="Company" >
-      <generatedKey column="COMPANY_ID" sqlStatement="MySql" identity="true" />
-    </table>
-        <table schema="gene" tableName="post" domainObjectName="Post" >
-      <generatedKey column="POST_ID" sqlStatement="MySql" identity="true" />
-    </table> -->
-    
-
-  </context>
+	</context>
 </generatorConfiguration>
