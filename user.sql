@@ -128,6 +128,7 @@ CREATE TABLE post(
 	id INT NOT NULL AUTO_INCREMENT,
 	company_id INT NOT NULL,
 	user_id INT NOT NULL,
+	post_name VARCHAR(100),
 	post_desc VARCHAR(3000),
 	post_date DATE,
 	location VARCHAR(50),

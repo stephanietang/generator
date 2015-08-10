@@ -2,7 +2,7 @@ CREATE TABLE "account" (
     "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT
     );
 
-CREATE TABLE "educationexperience" (
+CREATE TABLE "education_experience" (
     "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
     "school_name" varchar(150) NOT NULL UNIQUE,
     "degree" varchar(20) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE "educationexperience" (
     "entry_date" datetime NULL,
     "account_id" integer NOT NULL REFERENCES "account" ("id"));
 
-CREATE TABLE "product" (
+CREATE TABLE "works" (
     "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
      "description" varchar(500) NOT NULL,
      "account_id" integer NOT NULL REFERENCES "account" ("id"));
@@ -24,13 +24,13 @@ CREATE TABLE "website" (
     "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
     "name" varchar(100) NOT NULL);
 
-CREATE TABLE "socialnetwork" (
+CREATE TABLE "social_network" (
 
     "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
     "url" varchar(100) NOT NULL,
      "account_id" integer NOT NULL REFERENCES "account" ("id"));
 
-CREATE TABLE "workexperience" (
+CREATE TABLE "work_experience" (
     "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
     "company_name" varchar(150) NOT NULL UNIQUE,
      "duty_name" varchar(150) NOT NULL,
@@ -39,10 +39,10 @@ CREATE TABLE "workexperience" (
      "work_description" varchar(500) NOT NULL,
      "account_id" integer NOT NULL REFERENCES "account" ("id"));
 
-CREATE INDEX "educationexperience_8a089c2a" ON "educationexperience" ("account_id");
-CREATE INDEX "product_8a089c2a" ON "product" ("account_id");
+CREATE INDEX "education_experience_8a089c2a" ON "education_experience" ("account_id");
+CREATE INDEX "product_8a089c2a" ON "works" ("account_id");
 CREATE INDEX "resume_8a089c2a" ON "resume" ("account_id");
-CREATE INDEX "socialnetwork_8a089c2a" ON "socialnetwork" ("account_id");
-CREATE INDEX "workexperience_8a089c2a" ON "workexperience" ("account_id");
+CREATE INDEX "social_network_8a089c2a" ON "social_network" ("account_id");
+CREATE INDEX "work_experience_8a089c2a" ON "work_experience" ("account_id");
 
 COMMIT;
