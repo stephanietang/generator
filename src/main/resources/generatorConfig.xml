@@ -39,33 +39,58 @@
 	    </javaClientGenerator>
 	
 		<!--  Tables -->
-		<!-- 
-	    <table schema="gene" tableName="user" domainObjectName="User" >
+        <table schema="gene" tableName="account" domainObjectName="Account" >
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+        </table>
+
+        <table schema="gene" tableName="education_experience" domainObjectName="EducationExperience" >
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+        </table>
+
+        <table schema="gene" tableName="education_experience" domainObjectName="EducationExperience" >
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+        </table>
+
+        <table schema="gene" tableName="works" domainObjectName="Works" >
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+        </table>
+
+        <table schema="gene" tableName="website" domainObjectName="Website" >
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+        </table>
+
+        <table schema="gene" tableName="social_network" domainObjectName="SocialNetwork" >
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+        </table>
+
+        <table schema="gene" tableName="work_experience" domainObjectName="WorkExperience" >
+            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
+        </table>
+
+
+        <!--
+        <table schema="gene" tableName="user" domainObjectName="User" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
 	    </table>
-	     -->
-	     <!-- 
-	    <table schema="gene" tableName="system_param" domainObjectName="SystemParam" >
+		<table schema="gene" tableName="system_param" domainObjectName="SystemParam" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
-	    </table>
-	    -->
-	    
-	    <table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
-	      	<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
-	    </table>
-		<!-- 
-	    <table schema="gene" tableName="education" domainObjectName="Education" >
-	      	<generatedKey column="id" sqlStatement="MySql" identity="true" />
-	    </table>
-	    <table schema="gene" tableName="verify_token" domainObjectName="VerifyToken" >
-	      	<generatedKey column="ID" sqlStatement="MySql" identity="true" />
+		</table>
+
+		<table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
+			<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
+		</table>
+
+		<table schema="gene" tableName="education" domainObjectName="Education" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="gene" tableName="verify_token" domainObjectName="VerifyToken" >
+			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="verified" javaType="java.lang.Integer" />
 			<columnOverride column="token_type" javaType="java.lang.Integer" />
-	    </table>
-	    -->
-	    <!-- <table schema="gene" tableName="role" domainObjectName="Role" >
+		</table>
+	    <table schema="gene" tableName="role" domainObjectName="Role" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 	    </table>
 	    <table schema="gene" tableName="user_role" domainObjectName="UserRole" >
@@ -76,13 +101,8 @@
 	    </table>
 	    <table schema="gene" tableName="role_permission" domainObjectName="RolePermission" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" /> 
-	    </table>-->
-	    <!-- <table schema="gene" tableName="company" domainObjectName="Company" >
-	      <generatedKey column="COMPANY_ID" sqlStatement="MySql" identity="true" />
 	    </table>
-	        <table schema="gene" tableName="post" domainObjectName="Post" >
-	      <generatedKey column="POST_ID" sqlStatement="MySql" identity="true" />
-	    </table> -->
+	    -->
 
 	</context>
 </generatorConfiguration>
