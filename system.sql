@@ -1,9 +1,6 @@
-DROP TABLE IF EXISTS country;
-DROP TABLE IF EXISTS experience;
-DROP TABLE IF EXISTS degree;
-DROP TABLE IF EXISTS sex;
+DROP TABLE IF EXISTS system_param;
 
-CREATE TABLE SYSTEM_PARAM(
+CREATE TABLE system_param(
 	id INT NOT NULL AUTO_INCREMENT,
 	param_group VARCHAR(10),
 	param_value INT,
@@ -16,18 +13,18 @@ CREATE TABLE SYSTEM_PARAM(
 );
 
 
-INSERT INTO SYSTEM_PARAM VALUES (1, 'COUNTRY',1,'中国', 'China',1);
-INSERT INTO SYSTEM_PARAM VALUES (2, 'COUNTRY',2,'美国', 'USA',1);
+INSERT INTO system_param VALUES (1, 'COUNTRY',1,'中国', 'China',1);
+INSERT INTO system_param VALUES (2, 'COUNTRY',2,'美国', 'USA',1);
 
-INSERT INTO SYSTEM_PARAM VALUES (3, 'EXPERIENCE',1, '应届毕业生','Graduating Student',1);
-INSERT INTO SYSTEM_PARAM VALUES (4, 'EXPERIENCE',2, '一年至三年', '1-3 Years Experience',1);
-INSERT INTO SYSTEM_PARAM VALUES (5, 'EXPERIENCE',3, '三年至五年', '3-5 Years Experience',1);
-INSERT INTO SYSTEM_PARAM VALUES (6, 'EXPERIENCE',4, '五年以上', 'Above 5 Years Experience',1);
+INSERT INTO system_param VALUES (3, 'EXPERIENCE',1, '应届毕业生','Graduating Student',1);
+INSERT INTO system_param VALUES (4, 'EXPERIENCE',2, '一年至三年', '1-3 Years Experience',1);
+INSERT INTO system_param VALUES (5, 'EXPERIENCE',3, '三年至五年', '3-5 Years Experience',1);
+INSERT INTO system_param VALUES (6, 'EXPERIENCE',4, '五年以上', 'Above 5 Years Experience',1);
 
-INSERT INTO SYSTEM_PARAM VALUES (7, 'DEGREE',1,'本科', 'Bachelor',1);
-INSERT INTO SYSTEM_PARAM VALUES (8, 'DEGREE',2,'硕士','Master',1);
-INSERT INTO SYSTEM_PARAM VALUES (9, 'DEGREE',3,'博士','PHD',1);
-INSERT INTO SYSTEM_PARAM VALUES (10, 'DEGREE',4,'大专','Associate Degree',1);
+INSERT INTO system_param VALUES (7, 'DEGREE',1,'本科', 'Bachelor',1);
+INSERT INTO system_param VALUES (8, 'DEGREE',2,'硕士','Master',1);
+INSERT INTO system_param VALUES (9, 'DEGREE',3,'博士','PHD',1);
+INSERT INTO system_param VALUES (10, 'DEGREE',4,'大专','Associate Degree',1);
 
-INSERT INTO SYSTEM_PARAM VALUES (11, 'SEX',1,'男','Male',1);
-INSERT INTO SYSTEM_PARAM VALUES (12, 'SEX',2,'女','Female',1);
+INSERT INTO system_param VALUES (11, 'SEX',1,'男','Male',1);
+INSERT INTO system_param VALUES (12, 'SEX',2,'女','Female',1);

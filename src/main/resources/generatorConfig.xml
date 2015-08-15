@@ -39,20 +39,23 @@
 	    </javaClientGenerator>
 	
 		<!--  Tables -->
+		<!-- 
 	    <table schema="gene" tableName="user" domainObjectName="User" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
 	    </table>
+	     -->
 	     <!-- 
 	    <table schema="gene" tableName="system_param" domainObjectName="SystemParam" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
 	    </table>
+	    -->
 	    
 	    <table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
 	      	<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
 	    </table>
-	
+		<!-- 
 	    <table schema="gene" tableName="education" domainObjectName="Education" >
 	      	<generatedKey column="id" sqlStatement="MySql" identity="true" />
 	    </table>
