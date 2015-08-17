@@ -46,18 +46,17 @@ CREATE TABLE basic_info(
 );
 
 CREATE TABLE education(
-	id INT,
+	id INT NOT NULL AUTO_INCREMENT,
 	user_id INT,
 	school_name VARCHAR(200),
-	degree_id INT,
+	degree INT,
 	start_year INT(4),
 	end_year INT(4),
 	department VARCHAR(200),
 	
 	PRIMARY KEY(id),
 	
-	FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (degree_id) REFERENCES degree(id) ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
