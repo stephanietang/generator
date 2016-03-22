@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
 	<!--  <classPathEntry location="C:\Program Files\MySQL\Connector.J 5.1\mysql-connector-java-5.1.36-bin.jar" /> -->
-	<classPathEntry location="/Users/Stephanie/API/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar" />
+	<classPathEntry location="/Users/mac/Software/mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar" />
 
 	<context id="mysqlTable" targetRuntime="MyBatis3">
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
@@ -71,11 +71,9 @@
 		<table schema="gene" tableName="education" domainObjectName="Education" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
--->
 		<table schema="gene" tableName="avatar" domainObjectName="Avatar" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-        <!--
         <table schema="gene" tableName="user" domainObjectName="User" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
@@ -100,9 +98,11 @@
 	    <table schema="gene" tableName="role" domainObjectName="Role" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 	    </table>
+	    !-->
 	    <table schema="gene" tableName="user_role" domainObjectName="UserRole" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 	    </table>
+	    <!-- 
 	    <table schema="gene" tableName="permission" domainObjectName="Permission" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 	    </table>
