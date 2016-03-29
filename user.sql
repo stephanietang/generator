@@ -20,7 +20,7 @@ CREATE TABLE persistent_logins (
 CREATE TABLE user(
 	id INT NOT NULL AUTO_INCREMENT,
 	email VARCHAR(50),
-	password VARCHAR(200) NOT NULL,
+	password VARCHAR(60) NOT NULL,
 	enabled TINYINT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY(id),
