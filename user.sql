@@ -1,8 +1,10 @@
+
 DROP TABLE IF EXISTS verify_token;
 DROP TABLE IF EXISTS user_role;
 -- DROP TABLE IF EXISTS role_permission;
-DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS role;
+DROP TABLE IF EXISTS user;
+
 -- DROP TABLE IF EXISTS permission;
 
 
@@ -17,9 +19,8 @@ CREATE TABLE persistent_logins (
 
 CREATE TABLE user(
 	id INT NOT NULL AUTO_INCREMENT,
-	password VARCHAR(200) NOT NULL,
-	salt VARCHAR(50) NOT NULL,
 	email VARCHAR(50),
+	password VARCHAR(60) NOT NULL,
 	enabled TINYINT NOT NULL DEFAULT 0,
 
 	PRIMARY KEY(id),
@@ -45,18 +46,19 @@ CREATE TABLE user_role(
 	CONSTRAINT fk_user_role_2 FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
---CREATE TABLE verify_token(
---	id INT NOT NULL AUTO_INCREMENT,
---	user_id INT NOT NULL,
---	token VARCHAR(60),
---	token_type TINYINT,
---	expiry_date DATE,
---	verified TINYINT NOT NULL DEFAULT 0,
---	
---	PRIMARY KEY (id),
---	
---	CONSTRAINT fk_verify_token FOREIGN KEY (user_id) REFERENCES user(id)
---);
+CREATE TABLE verify_token(
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT NOT NULL,
+	token VARCHAR(60),
+	token_type TINYINT,
+	expiry_date DATE,
+	sent TINYINT NOT NULL DEFAULT 0,
+	verified TINYINT NOT NULL DEFAULT 0,
+	
+	PRIMARY KEY (id),
+	
+	CONSTRAINT fk_verify_token FOREIGN KEY (user_id) REFERENCES user(id)
+);
 
 --CREATE TABLE permission(
 --	id INT NOT NULL AUTO_INCREMENT,
