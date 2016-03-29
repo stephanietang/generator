@@ -9,7 +9,7 @@ CREATE TABLE system_param(
 	enabled INT,
 	
 	PRIMARY KEY(id),
-	INDEX system_param_idx (param_group)
+	INDEX idx_system_param (param_group)
 );
 
 

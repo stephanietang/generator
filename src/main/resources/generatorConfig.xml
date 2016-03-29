@@ -57,14 +57,12 @@
 	    <table schema="gene" tableName="user_role" domainObjectName="UserRole" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 	    </table>
-	-->	
 		<table schema="gene" tableName="verify_token" domainObjectName="VerifyToken" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="verified" javaType="java.lang.Integer" />
 			<columnOverride column="token_type" javaType="java.lang.Integer" />
 			<columnOverride column="sent" javaType="java.lang.Integer" />
 		</table>
-<!-- 
 	    <table schema="gene" tableName="permission" domainObjectName="Permission" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 	    </table>
@@ -72,9 +70,20 @@
 	    <table schema="gene" tableName="role_permission" domainObjectName="RolePermission" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" /> 
 	    </table>
+    -->
     
-    
-    
+		<table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		
+		<table schema="gene" tableName="education" domainObjectName="Education" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		
+		<table schema="gene" tableName="avatar" domainObjectName="Avatar" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+    <!-- 
         <table schema="gene" tableName="education_experience" domainObjectName="EducationExperience" >
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
         </table>
@@ -94,22 +103,6 @@
         <table schema="gene" tableName="work_experience" domainObjectName="WorkExperience" >
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
         </table>
-		 
-		<table schema="gene" tableName="education" domainObjectName="Education" >
-			<generatedKey column="id" sqlStatement="MySql" identity="true" />
-		</table>
-		<table schema="gene" tableName="avatar" domainObjectName="Avatar" >
-			<generatedKey column="id" sqlStatement="MySql" identity="true" />
-		</table>
-
-		<table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
-			<generatedKey column="user_id" sqlStatement="MySql" identity="true" />
-		</table>
-
-		<table schema="gene" tableName="education" domainObjectName="Education" >
-			<generatedKey column="id" sqlStatement="MySql" identity="true" />
-		</table>
-		
 	    -->
 
 	</context>

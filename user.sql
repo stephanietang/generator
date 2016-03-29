@@ -80,12 +80,12 @@ CREATE TABLE verify_token(
 --);
 
 -- for testing
-INSERT INTO user(email,salt, password,enabled)
+INSERT INTO user(email, password,enabled)
 VALUES ('stephanie@gmail.com','123','123456', true);
-INSERT INTO user(email,salt, password,enabled)
-VALUES ('mkyong@gmail.com','123','123456', true);
-INSERT INTO user(email,salt,password,enabled)
-VALUES ('alex@gmail.com','123','123456', true);
+INSERT INTO user(email,password,enabled)
+VALUES ('company@gmail.com','123','123456', true);
+INSERT INTO user(email,password,enabled)
+VALUES ('admin@gmail.com','123','123456', true);
 
 INSERT INTO role (name)
 VALUES ('ROLE_TALENT');
@@ -97,10 +97,6 @@ VALUES ('ROLE_ADMIN');
 INSERT INTO user_role(user_id, role_id)
 VALUES (1,1);
 INSERT INTO user_role(user_id, role_id)
-VALUES (2,1);
+VALUES (2,2);
 INSERT INTO user_role(user_id, role_id)
-VALUES (2,3);
-INSERT INTO user_role(user_id, role_id)
-VALUES (3,2);
-
-
+VALUES (3,3);
