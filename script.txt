@@ -16,6 +16,9 @@ mybatis-generator:generate
 ##### kill tomcat process:
 pkill -9 -f tomcat
 
+##### native2ascii plugin:
+Properties Editor in market place
+
 
 #### mailGun sandbox
 curl -s --user 'api:key-e583d89ebc8d4437e5f51d85867dea3d' \
