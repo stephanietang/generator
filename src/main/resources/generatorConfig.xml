@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-	<!--  <classPathEntry location="C:\Program Files\MySQL\Connector.J 5.1\mysql-connector-java-5.1.36-bin.jar" /> -->
-	<classPathEntry location="/Users/mac/Software/mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar" />
+	<classPathEntry location="C:\Program Files\MySQL\mysql-connector-java-5.1.39\mysql-connector-java-5.1.39-bin.jar" />
+	<!-- <classPathEntry location="/Users/mac/Software/mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar" /> -->
 
 	<context id="mysqlTable" targetRuntime="MyBatis3">
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
@@ -75,7 +75,7 @@
 		<table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-		
+	    <!-- 	
 		<table schema="gene" tableName="education" domainObjectName="Education" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
@@ -83,7 +83,7 @@
 		<table schema="gene" tableName="avatar" domainObjectName="Avatar" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-    <!-- 
+
         <table schema="gene" tableName="education_experience" domainObjectName="EducationExperience" >
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
         </table>

@@ -4,7 +4,7 @@ CREATE TABLE basic_info(
 	user_id INT NOT NULL,
 	name VARCHAR(250),
 	country INT,
-	city VARCHAR(100),
+	city INT,
 	tel_no VARCHAR(20),
 	experience INT,
 	degree INT,
