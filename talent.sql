@@ -1,4 +1,7 @@
+DROP TABLE IF EXISTS education;
 DROP TABLE IF EXISTS basic_info;
+DROP TABLE IF EXISTS avatar;
+
 CREATE TABLE basic_info(
 	id INT NOT NULL AUTO_INCREMENT,
 	user_id INT NOT NULL,
@@ -17,7 +20,6 @@ CREATE TABLE basic_info(
 	CONSTRAINT fk_basic_info FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
-DROP TABLE IF EXISTS education;
 CREATE TABLE education(
 	id INT NOT NULL AUTO_INCREMENT,
 	basic_info_id INT,
@@ -32,7 +34,6 @@ CREATE TABLE education(
 	CONSTRAINT fk_education FOREIGN KEY (basic_info_id) REFERENCES basic_info(id)
 );
 
-DROP TABLE IF EXISTS avatar;
 CREATE TABLE avatar(
 	id INT NOT NULL AUTO_INCREMENT,
 	user_id INT NOT NULL,
@@ -47,6 +48,6 @@ CREATE TABLE avatar(
 
 
 -- testing
-insert into basic_info values (1, 1, '陈大文', 1, '深圳', '16820428602', 1, 1, 1, 1985);
+insert into basic_info values (1, 1, '陈大文', 1, 1, '16820428602', 1, 1, 1, 1985);
 insert into education values(1,1,'清华大学',1,2003,2007,'计算机科学与技术');
 insert into education values(2,1,'哥伦比亚大学',2,2007,2009,'计算机科学与技术');
