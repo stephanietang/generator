@@ -39,11 +39,12 @@
 	    </javaClientGenerator>
 	
 		<!--  Tables -->
+<!--
 		<table schema="gene" tableName="system_param" domainObjectName="SystemParam" >
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
 		</table>
-<!--		
+		
         <table schema="gene" tableName="user" domainObjectName="User" >
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
             <columnOverride column="enabled" javaType="java.lang.Integer" />
@@ -69,36 +70,28 @@
 	    <table schema="gene" tableName="role_permission" domainObjectName="RolePermission" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" /> 
 	    </table>
--->    
+    
 		<table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-<!--	     	
+	     	
 		<table schema="gene" tableName="education" domainObjectName="Education" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-		
+-->		
+		<table schema="gene" tableName="work_exp" domainObjectName="WorkExperience" >
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+<!--		
 		<table schema="gene" tableName="avatar" domainObjectName="Avatar" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-
-        <table schema="gene" tableName="education_experience" domainObjectName="EducationExperience" >
-            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
-        </table>
-
-        <table schema="gene" tableName="works" domainObjectName="Works" >
-            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
-        </table>
 
         <table schema="gene" tableName="website" domainObjectName="Website" >
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
         </table>
 
         <table schema="gene" tableName="social_network" domainObjectName="SocialNetwork" >
-            <generatedKey column="ID" sqlStatement="MySql" identity="true" />
-        </table>
-
-        <table schema="gene" tableName="work_experience" domainObjectName="WorkExperience" >
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
         </table>
 	    -->
