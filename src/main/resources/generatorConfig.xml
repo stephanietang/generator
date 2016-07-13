@@ -44,12 +44,10 @@
 			<generatedKey column="ID" sqlStatement="MySql" identity="true" />
 			<columnOverride column="enabled" javaType="java.lang.Integer" />
 		</table>
-		
         <table schema="gene" tableName="user" domainObjectName="User" >
             <generatedKey column="ID" sqlStatement="MySql" identity="true" />
             <columnOverride column="enabled" javaType="java.lang.Integer" />
         </table>
-
 	    <table schema="gene" tableName="role" domainObjectName="Role" >
 	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
 	    </table>
@@ -63,14 +61,6 @@
 			<columnOverride column="token_type" javaType="java.lang.Integer" />
 			<columnOverride column="sent" javaType="java.lang.Integer" />
 		</table>
-	    <table schema="gene" tableName="permission" domainObjectName="Permission" >
-	      <generatedKey column="ID" sqlStatement="MySql" identity="true" />
-	    </table>
-	    
-	    <table schema="gene" tableName="role_permission" domainObjectName="RolePermission" >
-	      <generatedKey column="ID" sqlStatement="MySql" identity="true" /> 
-	    </table>
-    
 		<table schema="gene" tableName="basic_info" domainObjectName="BasicInfo" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
@@ -78,11 +68,9 @@
 		<table schema="gene" tableName="education" domainObjectName="Education" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
--->		
 		<table schema="gene" tableName="work_exp" domainObjectName="WorkExperience" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>
-<!--		
 		<table schema="gene" tableName="avatar" domainObjectName="Avatar" >
 			<generatedKey column="id" sqlStatement="MySql" identity="true" />
 		</table>

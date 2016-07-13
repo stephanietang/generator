@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS education;
+DROP TABLE IF EXISTS work_exp;
 DROP TABLE IF EXISTS basic_info;
 DROP TABLE IF EXISTS avatar;
 
@@ -14,10 +15,8 @@ CREATE TABLE basic_info(
 	sex INT,
 	birth_year INT(4),
 	
-	PRIMARY KEY(id),
-	UNIQUE uni_basic_info (user_id),
-	INDEX idx_basic_info (user_id),
-	CONSTRAINT fk_basic_info FOREIGN KEY (user_id) REFERENCES user(id)
+	CONSTRAINT basic_info_pk PRIMARY KEY(id),
+	CONSTRAINT basic_info_user_id_fk FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 CREATE TABLE education(
@@ -29,9 +28,8 @@ CREATE TABLE education(
 	end_year INT(4),
 	department VARCHAR(200),
 	
-	PRIMARY KEY(id),
-	
-	CONSTRAINT fk_education FOREIGN KEY (basic_info_id) REFERENCES basic_info(id)
+	CONSTRAINT education_pk PRIMARY KEY(id),
+	CONSTRAINT education_basic_info_id_fk FOREIGN KEY (basic_info_id) REFERENCES basic_info(id)
 );
 
 CREATE TABLE work_exp(
@@ -43,9 +41,8 @@ CREATE TABLE work_exp(
 	position_name VARCHAR(200),
 	position_desc VARCHAR(500),
 	
-	PRIMARY KEY(id),
-	
-	CONSTRAINT fk_work_exp FOREIGN KEY (basic_info_id) REFERENCES basic_info(id)
+	CONSTRAINT work_exp_pk PRIMARY KEY(id),
+	CONSTRAINT work_exp_basic_info_id_fk FOREIGN KEY (basic_info_id) REFERENCES basic_info(id)
 );
 
 CREATE TABLE avatar(
@@ -54,10 +51,9 @@ CREATE TABLE avatar(
 	uuid VARCHAR(36),
 	path VARCHAR(200),
 	
-	PRIMARY KEY(id),
-	INDEX idx_avatar (user_id),
-	INDEX idx_avatar_2 (uuid),
-	CONSTRAINT fk_avatar FOREIGN KEY (user_id) REFERENCES user(id)
+	CONSTRAINT avatar_pk PRIMARY KEY(id),
+	CONSTRAINT avatar_user_id_fk FOREIGN KEY (user_id) REFERENCES user(id),
+	CONSTRAINT UNIQUE INDEX avatar_uuid_uq (uuid)
 );
 
 
